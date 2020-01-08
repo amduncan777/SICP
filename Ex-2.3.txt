@@ -1,0 +1,21 @@
+(define (make-rec length-seg width-seg)
+  (cons length-seg width-seg))
+
+(define (length-seg rectangle)
+  (car rectangle))
+
+(define (width-seg rectangle)
+  (cdr rectangle)
+
+(define (length-of-seg segment)
+  (sqrt (+ (square (x-point segment))
+           (square (y-point segment)))))
+
+(define (perimeter rectangle)
+  (* 2
+     (+ (length-of-seg (length-seg rectangle))
+        (length-of-seg (width-seg rectangle)))))
+
+(define (area rectangle)
+  (* (length-of-seg (length-seg rectangle))
+     (length-of-seg (width-seg rectangle))))
