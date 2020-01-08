@@ -1,5 +1,10 @@
-(define (make-rec length-seg width-seg)
+(define (make-rec-perp length-seg width-seg)
   (cons length-seg width-seg))
+
+(define (make-rec-pll length-seg-1 length-seg-2)
+  (cons length-seg-1
+        (make-segment (x-point length-seg-1)
+                      (x-point length-seg-2)))
 
 (define (length-seg rectangle)
   (car rectangle))
